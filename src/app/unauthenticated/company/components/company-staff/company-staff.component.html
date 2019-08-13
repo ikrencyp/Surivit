@@ -1,0 +1,21 @@
+<div class="featurette text-center">
+  <h4>{{ 'UNAUTHENTICATION.COMPANY.STAFF' | translate }}</h4>
+  <hr class="style-classic bg-0F84EF hr-mini-size">
+</div>
+<div class="card-model">
+  <div class="row row-eq-height justify-content-center"
+    *ngFor="let ITEM_STAFF of CONSTANTS?.PAGES?.UNAUTHENTICATED?.COMPANY?.COMPONENTS?.STAFFS">
+    <div *ngFor="let ROW of ITEM_STAFF.ROW" [class]="ITEM_STAFF.CLASS" data-aos="fade-up" data-aos-duration="1500">
+      <div class="card-model-about-col">
+        <div class="card-model-about-col-padding">
+          <div class="img">
+            <img async=on [src]="ROW.IMG.SRC" class="img-fluid">
+          </div>
+          <h6 class="staff-name text-center"><b>{{ ROW.NAME | translate }}</b></h6>
+          <hr class="style-classic bg-0F84EF hr-mini-size">
+          <p class="text-center"><b>{{ ROW.ROLE | translate }}</b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

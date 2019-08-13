@@ -1,0 +1,30 @@
+<div class="row justify-content-md-center">
+  <div class="col-md-4" data-aos="fade-down" data-aos-duration="1500" data-aos-delay="500">
+    <h5 class="text-white">{{ 'FOOTER.MENU' | translate }}</h5>
+    <ul class="list-unstyled text-small">
+      <li [routerLinkActive]="CONSTANTS.STYLES.CLASS.ACTIVE" *ngFor="let page of pages">
+        <a class="text-muted"
+          [routerLink]="CONSTANTS.PAGES.UNAUTHENTICATED[page].PATH">{{ CONSTANTS.PAGES.UNAUTHENTICATED[page].NAME | translate }}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-4" data-aos="fade-down" data-aos-duration="1500" data-aos-delay="1000">
+    <h5 class="text-white">{{ 'FOOTER.GET_CONNECT' | translate }}</h5>
+    <ul class="list-unstyled text-small">
+      <li>
+        <a class="text-muted" href="https://www.facebook.com/surivit.duangchai.3">Facebook</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-4" data-aos="fade-down" data-aos-duration="1500" data-aos-delay="1500">
+    <h5 class="text-white">{{ 'FOOTER.CONTACT' | translate }}</h5>
+    <p class="text-muted">
+      {{ 'UNAUTHENTICATION.CONTACT.TITLE_ADDRESS' | translate }} :
+      {{ 'UNAUTHENTICATION.CONTACT.ADDRESS' | translate }}
+    </p>
+    <p class="text-muted">
+      {{ 'UNAUTHENTICATION.CONTACT.TITLE_TELEPHONE' | translate }} :
+      {{ 'UNAUTHENTICATION.CONTACT.TELEPHONE' | translate }}
+    </p>
+  </div>
+</div>

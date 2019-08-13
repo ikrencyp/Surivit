@@ -1,0 +1,20 @@
+@import '../../../../../lib/scss/constants/variables';
+
+.features-model {
+  .feature-block {
+    img {
+      width: 100% !important;
+      max-width: 128px !important;
+      height: auto !important;
+      margin-bottom: 5px !important;
+    }
+  }
+}
+
+.features-model {
+  .feature-block {
+    h4:hover {
+      color: $color-0F84EF !important;
+    }
+  }
+}

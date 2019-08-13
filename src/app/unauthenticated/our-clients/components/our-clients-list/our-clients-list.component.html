@@ -1,0 +1,18 @@
+<div class="featurette text-center" data-aos="zoom-in-up" data-aos-duration="1500">
+  <h4>{{ 'COMMON.OUR_CLIENTS' | translate }}</h4>
+  <hr class="style-classic bg-0F84EF hr-mini-size">
+</div>
+<div class="row row-eq-height align-items-center featurette"
+  *ngFor="let ITEM_CLIENTS of CONSTANTS?.PAGES?.UNAUTHENTICATED?.OUR_CLIENTS?.COMPONENTS?.CLIENTS" data-aos="fade-up"
+  data-aos-duration="1500">
+  <div class="col-md-6 order-md-1 align-self-center">
+    <img async=on class="featurette-image featurette-image-style-classic image-client mx-auto mb-4"
+      [src]="ITEM_CLIENTS.IMG.SRC">
+  </div>
+  <div class="col-md-6 order-md-2 text-center align-self-center">
+    <h4>{{ ITEM_CLIENTS.NAME | translate }}</h4>
+    <hr class="style-classic bg-0F84EF hr-name">
+    <p><b>{{ ITEM_CLIENTS.ROLE | translate }}</b></p>
+    <p> {{ ITEM_CLIENTS.DESCRIPTION | translate }} </p>
+  </div>
+</div>

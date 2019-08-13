@@ -1,0 +1,35 @@
+<div class="featurette text-center" data-aos="zoom-in-up" data-aos-duration="1500">
+  <h4>{{ 'COMMON.SERVICES' | translate }}</h4>
+  <hr class="style-classic bg-0F84EF hr-mini-size">
+</div>
+<div class="card-model">
+  <div class="row row-eq-height justify-content-center"
+    *ngFor="let ITEM_PRODUCTS of CONSTANTS?.PAGES?.UNAUTHENTICATED?.SERVICES?.COMPONENTS?.PRODUCTS">
+    <div *ngFor="let ROW of ITEM_PRODUCTS.ROW" [class]="ITEM_PRODUCTS.CLASS" data-aos="fade-up"
+      data-aos-duration="1500">
+      <div class="card-model-about-col">
+        <div class="img">
+          <img async=on [src]="ROW.IMG.SRC" class="img-fluid">
+        </div>
+        <div class="card-model-about-col-padding">
+          <b>
+            <h6 class="product-title text-center">{{ ROW.TITLE | translate }} </h6>
+          </b>
+          <b>
+            <h5 class="text-center" [innerHTML]="(translateService.stream(ROW.NAME) | async)">
+            </h5>
+          </b>
+          <p class="text-center text-muted">{{ ROW.SUB_NAME | translate }}</p>
+          <hr class="style-classic bg-0F84EF hr-mini-size">
+          <p><b>{{ 'UNAUTHENTICATION.SERVICES.COVERAGE_TIME' | translate }} :
+            </b>{{ ROW.COVERAGE_TIME | translate }}</p>
+          <p><b>{{ 'UNAUTHENTICATION.SERVICES.AGE' | translate }} : </b>{{ ROW.AGE | translate }}</p>
+          <p><b>{{ 'UNAUTHENTICATION.SERVICES.DESCRIPTION' | translate }} :
+            </b>{{ ROW.DESCRIPTION | translate }}</p>
+          <p><b>{{ 'UNAUTHENTICATION.SERVICES.INFORMATIONS' | translate }} : </b></p>
+          <p *ngFor="let INFOR of ROW.INFORMATIONS">• {{ INFOR.VALUE | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

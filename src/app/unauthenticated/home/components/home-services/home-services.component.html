@@ -1,0 +1,20 @@
+<div data-aos="zoom-in-up" class="features-model">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="text-center" data-aos="zoom-in-up" data-aos-duration="1500">
+        <h2>{{ 'UNAUTHENTICATION.HOME.SERVICES' | translate }}</h2>
+        <hr class="style-classic bg-0F84EF hr-mini-size">
+      </div>
+    </div>
+  </div>
+  <div class="row row-eq-height"
+    *ngFor="let ITEM_SERVICES of CONSTANTS?.PAGES?.UNAUTHENTICATED?.HOME?.COMPONENTS?.SERVICES">
+    <div *ngFor="let ROW of ITEM_SERVICES.ROW" [class]="ITEM_SERVICES.CLASS" data-aos="fade-up"
+      data-aos-duration="1500">
+      <div class="feature-block text-center">
+        <img async=on [src]="ROW.IMG.SRC" alt="img" class="img-fluid">
+        <h4 class="text-center margin-initial">{{ ROW.TITLE | translate }}</h4>
+      </div>
+    </div>
+  </div>
+</div>

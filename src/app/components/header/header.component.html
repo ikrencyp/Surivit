@@ -1,0 +1,52 @@
+<nav class="p-2 px-md-4 navbar navbar-expand-md navbar-light" [attr.position-initial]="($positionInitial | async)"
+  [ngClass]="[($positionInitial | async) ? 'none-shadow bg-transparent' : 'show-shadow border-bottom bg-white', router?.url?.includes(CONSTANTS.PAGES.UNAUTHENTICATED.HOME.PATH) ? 'fixed-top' : 'sticky-top']">
+  <a class="navbar-brand" href="/" data-aos="fade-down" data-aos-duration="1500">
+    <img async=on [src]="($positionInitial | async) ? FILE_PATH.IMAGES.LOGO.WHITE.SRC : FILE_PATH.IMAGES.LOGO.NAVY.SRC">
+  </a>
+  <button #navigationMenu class="navbar-toggler border-color-transparent-navigation color-active-black" type="button"
+    data-toggle="collapse" data-target="#navigation-menu" aria-controls="navigation-menu" aria-expanded="false"
+    aria-label="Toggle navigation menu" [attr.button-menu]="valueAttrButtonNavigationMenu" data-aos="fade-down"
+    data-aos-duration="1500" [attr.data-aos-delay]="(pages?.length) * 200">
+    <i class="material-icons" [attr.button-menu]="valueAttrButtonNavigationMenu"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navigation-menu">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item align-self-center mobile-mode">
+        <div class="btn-group" role="group">
+          <button class="btn" (click)="translateService.use(language)"
+            [ngClass]="translateService.currentLang === language ? 'color-0F84EF' : 'color-unactive-black'"
+            type="button" *ngFor="let language of translateService?.getLangs()">
+            <img async=on [src]="FILE_PATH.IMAGES.LANGUAGE[language.toLocaleUpperCase()].SRC" width="25" height="25"
+              hspace="5">
+            {{ ('COMMON.' + language.toLocaleUpperCase()) | translate }}
+          </button>
+        </div>
+      </li>
+      <li class="nav-item align-self-center" [routerLinkActive]="CONSTANTS.STYLES.CLASS.ACTIVE"
+        *ngFor="let page of pages; let i = index" data-aos="fade-down" data-aos-duration="1500"
+        [attr.data-aos-delay]="(i + 1) * 200">
+        <a class="nav-link"
+          [routerLink]="CONSTANTS.PAGES.UNAUTHENTICATED[page].PATH">{{ CONSTANTS.PAGES.UNAUTHENTICATED[page].NAME | translate }}</a>
+      </li>
+      <li class="nav-item align-self-center dropdown desktop-mode" data-aos="fade-down" data-aos-duration="1500"
+        [attr.data-aos-delay]="(pages?.length) * 200">
+        <div class="btn-group margin-initial">
+          <button type="button" class="btn dropdown-toggle margin-initial" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            <img async=on [src]="FILE_PATH.IMAGES.LANGUAGE[translateService.currentLang.toLocaleUpperCase()].SRC"
+              width="25" height="25" class="d-inline-block" />
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" (click)="translateService.use(language)"
+              *ngFor="let language of translateService?.getLangs()"
+              [ngClass]="translateService.currentLang === language ? 'color-0F84EF' : 'color-unactive-black'">
+              <img async=on [src]="FILE_PATH.IMAGES.LANGUAGE[language.toLocaleUpperCase()].SRC" width="25" height="25"
+                hspace="10" />
+              {{ ('COMMON.' + language.toLocaleUpperCase()) | translate }}
+            </a>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

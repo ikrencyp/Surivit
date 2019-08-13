@@ -1,0 +1,29 @@
+<div class="card-model">
+  <div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="text-center" data-aos="zoom-in-up" data-aos-duration="1500">
+        <h2>{{ 'UNAUTHENTICATION.HOME.HOW_WE_WORK' | translate }}</h2>
+        <hr class="style-classic bg-0F84EF hr-mini-size">
+      </div>
+    </div>
+  </div>
+  <div class="row row-eq-height"
+    *ngFor="let ITEM_HOW_WE_WORK of CONSTANTS?.PAGES?.UNAUTHENTICATED?.HOME?.COMPONENTS?.HOW_WE_WORK">
+    <div *ngFor="let ROW of ITEM_HOW_WE_WORK.ROW" [class]="ITEM_HOW_WE_WORK.CLASS" data-aos="fade-up"
+      data-aos-duration="1500">
+      <div class="card-model-about-col">
+        <div class="card-model-about-col-padding">
+          <div class="img text-center">
+            <img async=on [src]="ROW.IMG.SRC" alt="" class="img-fluid">
+            <div class="icon">
+              <div class="i-text">{{ ROW.ORDER }}</div>
+            </div>
+          </div>
+          <h2 class="title">{{ ROW.TITLE | translate }}</h2>
+          <hr class="style-classic bg-0F84EF hr-mini-size">
+          <p>{{ ROW.SUB_TITLE | translate }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

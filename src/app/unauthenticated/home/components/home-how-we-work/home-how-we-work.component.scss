@@ -1,0 +1,50 @@
+@import '../../../../../lib/scss/constants/variables';
+
+.card-model {
+  background-size: cover !important;
+  // padding: 60px 0 40px 0 !important;
+  position: relative !important;
+}
+
+.card-model::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+}
+
+.card-model {
+  .container {
+    position: relative !important;
+    z-index: 10 !important;
+  }
+}
+
+.card-model {
+  .card-model-about-col {
+    h2 {
+      &:hover {
+        color: $color-0F84EF !important;
+      }
+    }
+    img {
+      width: 100% !important;
+      max-width: 128px !important;
+      height: auto !important;
+    }
+    .icon {
+      background-color: $color-0F84EF !important;
+    }
+  }
+  .card-model-about-col:hover {
+    .i-text {
+      color: $color-0F84EF !important;
+    }
+    .icon {
+      background-color: #fff !important;
+    }
+  }
+}
